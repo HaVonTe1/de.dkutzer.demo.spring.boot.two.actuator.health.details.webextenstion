@@ -10,6 +10,11 @@ management:
     health:
       show-details: false
 
+
+endpoints:
+  healthdetails:
+    enabled: true
+
 demo:
   security:
     actuator:
