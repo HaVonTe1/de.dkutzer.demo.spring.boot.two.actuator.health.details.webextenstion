@@ -1,11 +1,10 @@
 package de.dkutzer.demo.spring.boot.two.actuator.health.details.webextenstion;
 
-import java.util.Map;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
-import org.springframework.boot.actuate.endpoint.annotation.Selector;
 import org.springframework.boot.actuate.endpoint.web.WebEndpointResponse;
 import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthEndpoint;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.actuate.health.HealthStatusHttpMapper;
 import org.springframework.stereotype.Component;
@@ -14,11 +13,11 @@ import org.springframework.stereotype.Component;
 @Endpoint(id = "healthdetails")
 public class HealthDetailsEndpoint {
 
-    private HealthIndicator delegate;
+    private HealthEndpoint delegate;
 
     private final HealthStatusHttpMapper statusHttpMapper;
 
-    public HealthDetailsEndpoint(HealthIndicator delegate,
+    public HealthDetailsEndpoint(HealthEndpoint delegate,
         HealthStatusHttpMapper statusHttpMapper) {
         this.delegate = delegate;
         this.statusHttpMapper = statusHttpMapper;
