@@ -1,0 +1,18 @@
+
+management:
+  jolokia:
+    enabled: true
+  endpoints:
+    web:
+      expose: '*'
+      base-path: /
+  endpoint:
+    health:
+      show-details: false
+
+demo:
+  security:
+    actuator:
+      username: baz
+#      password: "{noop}qux"
+      password: "{bcrypt}$2a$10$/9.OZ6S5SgWb.UAm6gkJ6eLxxItuFTYbzFBq0c1pSXurY2rxemtQO"
